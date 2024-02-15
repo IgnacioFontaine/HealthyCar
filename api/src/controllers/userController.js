@@ -37,6 +37,28 @@ const createUserDB = async (
   }
 };
 
+const updatePassword = async (
+  id,
+  newPassword) => {
+  try {
+    let user_modif = await User.findOne({ where: { id } })
+
+    if (!user_modif) {
+    throw new Error('The id was not found or it is incorrect');
+    }
+
+    if (user_modif) {
+      user_modif = await User.update(
+            { password:  newPassword },
+            { where: { id } }
+        );
+    }
+
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 const deleteUser = async (id) => {
 
     const findUser = await User.findOne({ where: { id } });
@@ -51,5 +73,6 @@ module.exports = {
   getUsers,
   getUserByName,
   createUserDB,
-  deleteAuthor
+  updatePassword,
+  deleteUser
 };
