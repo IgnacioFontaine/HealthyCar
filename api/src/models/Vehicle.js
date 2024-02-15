@@ -5,7 +5,7 @@ const { DataTypes } = require("sequelize");
 module.exports = (sequelize) => {
   // defino el modelo
   sequelize.define(
-    "proyect",
+    "vehicle",
     {
       id: {
         type: DataTypes.UUID,
@@ -17,10 +17,18 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      description: {
-        type: DataTypes.STRING,
+      totalKm: {
+        type: DataTypes.NUMBER,
         allowNull: false,
-      }
+      },
+      oilKm: {
+        type: DataTypes.NUMBER,
+        allowNull: false,
+      },
+      serviceKm: {
+        type: DataTypes.NUMBER,
+        allowNull: false,
+      },
     },
     { timestamps: false }
   );
