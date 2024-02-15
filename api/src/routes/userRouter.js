@@ -1,9 +1,11 @@
 //Router Product
 const { Router } = require("express");
 const {
-  getAuthors,
-  createAuthorDB,
-  deleteAuthor
+  getUsers,
+  getUserName,
+  createUserDB,
+  modifyUserDB,
+  deleteUser
 } = require("../controllers/authorController");
 
 const router = Router();
@@ -20,14 +22,14 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, password } = req.body;
 
     //Create
-    const newAuthor = await createAuthorDB(
-      name
+    const newUser = await createUserDB(
+      name, password
     );
 
-    return res.status(200).json(newAuthor);
+    return res.status(200).json(newUser);
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
