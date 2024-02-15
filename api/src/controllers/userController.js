@@ -37,13 +37,13 @@ const createUserDB = async (
   }
 };
 
-const deleteAuthor = async (id) => {
+const deleteUser = async (id) => {
 
-    const findAuthor = await Author.findOne({ where: { id } });
+    const findUser = await User.findOne({ where: { id } });
     
-    if (!findAuthor) throw error("Providen id not found");
+    if (!findUser) throw error("Providen id not found");
 
-    await findAuthor.destroy();
+    await findUser.destroy();
     return {message: "Delete success"}
 };
 
