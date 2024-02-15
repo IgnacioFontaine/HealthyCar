@@ -1,8 +1,11 @@
 //Router Product
 const { Router } = require("express");
 const {
-  
-} = require("../controllers/proyectController");
+  getAllVehicles,
+  getVehicleByName,
+  createVehicleDB,
+  deleteVehicle
+} = require("../controllers/vehicleController");
 
 const { Author } = require("../db");
 
@@ -12,14 +15,14 @@ router.get("/", async (req, res) => {
   try {
     const { name } = req.body;
     if (name) {
-      const proyect_name = await getProyectByName(name)
+      const vehicle_name = await getVehicleByName(name)
       
-      return res.status(200).json(proyect_name);
+      return res.status(200).json(vehicle_name);
         
     }
     if (!name) {
-      const proyects = await getAllProyects()
-      return res.status(200).json(proyects);
+      const vehicles = await getAllVehicles()
+      return res.status(200).json(vehicles);
     }
   } catch (error) {
     return res.status(400).json({ error: error.message });
