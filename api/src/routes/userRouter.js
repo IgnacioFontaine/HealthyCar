@@ -43,6 +43,21 @@ router.post("/create", async (req, res) => {
   }
 });
 
+router.put("/modify", async (req, res) => {
+  try {
+      const { id, newPassword } = req.body;
+    
+      if (!id) return res.status(404).json({ error: 'Id not found' });
+    
+        const putUser = await updatePassword(id, newPassword);
+        return res.status(200).json(putUser);
+    
+    
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+})
+
 router.delete("/delete/:id",async (req, res) => {
   const { id } = req.params;
   try {
