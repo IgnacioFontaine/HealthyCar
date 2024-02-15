@@ -39,70 +39,20 @@ const createVehicleDB = async (
 };
 
 
-const updateProyect = async (
-  id,
-  newName,
-  newDescription) => {
-  try {
-    let proyect_modif = await Proyect.findOne({ where: { id } })
+const deleteVehicle = async (id) => {
+
+    const findVehicle = await Vehicle.findOne({ where: { id } });
     
+    if (!findVehicle) throw error("Providen id not found");
 
-    if (!proyect_modif) {
-    throw new Error('The id was not found or it is incorrect');
-    }
-
-    if (proyect_modif) {
-      proyect_modif = await Proyect.update({
-        name: newName,
-        description: newDescription
-      },
-        { where: { id } }
-        );
-    }
-
-  } catch (error) {
-    throw new Error(error);
-  }
-};
-
-const updateDescriptionProyect = async (
-  id,
-  newDescription) => {
-  try {
-    let proyect_modif = await Proyect.findOne({ where: { id } })
-
-    if (!proyect_modif) {
-    throw new Error('The id was not found or it is incorrect');
-    }
-
-    if (proyect_modif) {
-      proyect_modif = await Proyect.update(
-            { description:  newDescription },
-            { where: { id } }
-        );
-    }
-
-  } catch (error) {
-    throw new Error(error);
-  }
-};
-
-const deleteProyect = async (id) => {
-
-    const findProyect = await Proyect.findOne({ where: { id } });
-    
-    if (!findProyect) throw error("Providen id not found");
-
-    await findProyect.destroy();
+    await findVehicle.destroy();
     return {message: "Delete success"}
 };
 
 
 module.exports = {
-  getAllProyects,
-  getProyectByName,
-  createProyectDB,
-  updateProyect,
-  updateDescriptionProyect,
-  deleteProyect
+  getAllVehicles,
+  getVehicleByName,
+  createVehicleDB,
+  deleteVehicle
 };
