@@ -1,14 +1,14 @@
 const { Router } = require("express");
 
 //Requerir los routers
-const authorRouter = require("./authorRouter");
-const proyectRouter = require("./proyectRouter");
+const userRouter = require("./userRouter");
+const vehicleRouter = require("./vehicleRouter");
 
 //Ruter:
 const router = Router();
 
 // Configurar los routers
-router.use("/author", authorRouter);
-router.use("/proyect", proyectRouter);
+router.use("/user", userRouter);
+router.use("/vehicle", vehicleRouter);
 
 module.exports = router;
