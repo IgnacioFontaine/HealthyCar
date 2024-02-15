@@ -2,19 +2,27 @@
 const { Router } = require("express");
 const {
   getUsers,
-  getUserName,
+  getUserByName,
   createUserDB,
-  modifyUserDB,
+  updatePassword,
   deleteUser
-} = require("../controllers/authorController");
+} = require("../controllers/userController");
 
 const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-      const authors = await getAuthors()
-      return res.status(200).json(authors);
-    
+    const { name } = req.body;
+    if (name) {
+      const user_name = await getUserByName(name)
+      
+      return res.status(200).json(user_name);
+        
+    }
+    if (!name) {
+      const users = await getUsers()
+      return res.status(200).json(users);
+    }
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
@@ -39,7 +47,7 @@ router.delete("/delete/:id",async (req, res) => {
   const { id } = req.params;
   try {
     if (!id) return res.status(404).json({ error: "Invalid id" });
-    await deleteAuthor(id);
+    await deleteUser(id);
 
     return res.status(200).json({ message: "Author deleted successfully" });
 
