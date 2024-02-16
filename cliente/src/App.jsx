@@ -1,8 +1,8 @@
 import './App.css'
 import { Route, Routes } from "react-router-dom";
-import Login from "./Components/Login"
-import Home from "./Components/Home"
-import Error from "./Components/Error"
+import Login from "./Components/Login/login"
+import Home from "./Components/Home/home"
+import Error from "./Components/Error/error"
 
 function App() {
 
