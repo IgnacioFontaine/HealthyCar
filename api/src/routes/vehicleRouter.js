@@ -57,21 +57,14 @@ router.post("/create", async (req, res) => {
 
 router.put("/modify", async (req, res) => {
   try {
-      const { id, newName, newDescription } = req.body;
+      const { id, newTotalKm, newOilKm, newServiceKm } = req.body;
     
       if (!id) return res.status(404).json({ error: 'Id not found' });
-    
-      if (!newName) {
-        const putProyect = await updateDescriptionProyect(id, newDescription);
-        return res.status(200).json(putProyect);
-    }
 
-    if(newName) {
+        const putVehicle = await updateVehicle(id, newTotalKm, newOilKm, newServiceKm);
+        return res.status(200).json(putVehicle);
 
-        const putProyect = await updateProyect(id, newName, newDescription);
-        return res.status(200).json(putProyect);
-
-      }
+      
     
     } catch (error) {
         return res.status(500).json({ error: error.message });
