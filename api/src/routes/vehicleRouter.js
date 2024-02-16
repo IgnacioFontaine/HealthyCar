@@ -5,7 +5,8 @@ const {
   getVehicleByName,
   createVehicleDB,
   updateVehicle,
-  deleteVehicle
+  deleteVehicle,
+  getVehicleByType
 } = require("../controllers/vehicleController");
 
 const { User } = require("../db");
@@ -14,14 +15,21 @@ const router = Router();
 
 router.get("/", async (req, res) => {
   try {
-    const { name } = req.body;
+    const { name, type } = req.body;
     if (name) {
       const vehicle_name = await getVehicleByName(name)
       
       return res.status(200).json(vehicle_name);
         
     }
-    if (!name) {
+
+    if (type) {
+      const vehicle_type = await getVehicleByType(type)
+      
+      return res.status(200).json(vehicle_type);
+    }
+
+    if (!name && !type) {
       const vehicles = await getAllVehicles()
       return res.status(200).json(vehicles);
     }

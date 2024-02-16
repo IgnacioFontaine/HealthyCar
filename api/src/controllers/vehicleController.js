@@ -66,6 +66,7 @@ const deleteVehicle = async (id) => {
 module.exports = {
   getAllVehicles,
   getVehicleByName,
+  getVehicleByType,
   createVehicleDB,
   deleteVehicle
 };
