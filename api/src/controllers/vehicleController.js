@@ -51,8 +51,26 @@ const createVehicleDB = async (
   }
 };
 
-const updateVehicle = async () => {
+const updateVehicle = async (id, newType, newTotalKm, newOilKm, newServiceKm ) => {
   try {
+    let vehicule_modif = await User.findOne({ where: { id } })
+
+    if (!vehicule_modif) {
+    throw new Error('The id was not found or it is incorrect');
+    }
+
+    if (newType && newTotalKm && newOilKm && newServiceKm) {
+      vehicule_modif = await Vehicle.update(
+        {
+          type: newType,
+          totalKm: newTotalKm,
+          oilKm: newOilKm,
+          serviceKm: newServiceKm
+        },
+            
+            { where: { id } }
+        );
+    }
 
     
 
