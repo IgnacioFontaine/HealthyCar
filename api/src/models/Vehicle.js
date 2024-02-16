@@ -17,6 +17,10 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      type: {
+        type: DataTypes.ENUM("Car", "Motorcycle","Van", "Other"),
+        allowNull: false,
+      },
       totalKm: {
         type: DataTypes.NUMBER,
         allowNull: false,

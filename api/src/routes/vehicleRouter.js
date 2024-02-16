@@ -4,6 +4,7 @@ const {
   getAllVehicles,
   getVehicleByName,
   createVehicleDB,
+  updateVehicle,
   deleteVehicle
 } = require("../controllers/vehicleController");
 
