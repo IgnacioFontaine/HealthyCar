@@ -32,11 +32,12 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   try {
-    const { name, totalKm, oilKm, serviceKm } = req.body;
+    const { name, type,  totalKm, oilKm, serviceKm } = req.body;
 
     //Create
     const newVehicle= await createVehicleDB(
       name,
+      type,
       totalKm,
       oilKm,
       serviceKm
@@ -58,11 +59,11 @@ router.post("/create", async (req, res) => {
 
 router.put("/modify", async (req, res) => {
   try {
-      const { id, newTotalKm, newOilKm, newServiceKm } = req.body;
+      const { id, newType, newTotalKm, newOilKm, newServiceKm } = req.body;
     
       if (!id) return res.status(404).json({ error: 'Id not found' });
 
-        const putVehicle = await updateVehicle(id, newTotalKm, newOilKm, newServiceKm);
+        const putVehicle = await updateVehicle(id, newType, newTotalKm, newOilKm, newServiceKm);
         return res.status(200).json(putVehicle);
 
       
