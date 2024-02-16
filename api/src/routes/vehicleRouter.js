@@ -7,7 +7,7 @@ const {
   deleteVehicle
 } = require("../controllers/vehicleController");
 
-const { Author } = require("../db");
+const { User } = require("../db");
 
 const router = Router();
 
@@ -31,23 +31,25 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   try {
-    const { name, description, authorName } = req.body;
+    const { name, totalKm, oilKm, serviceKm } = req.body;
 
     //Create
-    const newProyect = await createProyectDB(
+    const newVehicle= await createVehicleDB(
       name,
-      description
+      totalKm,
+      oilKm,
+      serviceKm
     );
 
-    let authorDB = await Author.findOne({
-      where: {
-        name: authorName,
-      },
-    });
+    // let UserDB = await User.findOne({
+    //   where: {
+    //     name: authorName,
+    //   },
+    // });
 
-    newProyect.setAuthor(authorDB);
+    // newVehicle.setUser(userDB);
 
-    return res.status(200).json(newProyect);
+    return res.status(200).json(newVehicle);
   } catch (error) {
     return res.status(400).json({ error: error.message });
   }
