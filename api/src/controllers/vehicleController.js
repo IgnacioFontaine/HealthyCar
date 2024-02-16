@@ -72,6 +72,38 @@ const updateVehicle = async (id, newType, newTotalKm, newOilKm, newServiceKm ) =
         );
     }
 
+    if (newType && newTotalKm && newOilKm && !newServiceKm) {
+      vehicule_modif = await Vehicle.update(
+        {
+          type: newType,
+          totalKm: newTotalKm,
+          oilKm: newOilKm
+        },
+            
+            { where: { id } }
+        );
+    }
+
+    if (newType && newTotalKm && !newOilKm && !newServiceKm) {
+      vehicule_modif = await Vehicle.update(
+        {
+          type: newType,
+          totalKm: newTotalKm
+        },
+            
+            { where: { id } }
+        );
+    }
+
+    if (newType && !newTotalKm && !newOilKm && !newServiceKm) {
+      vehicule_modif = await Vehicle.update(
+        {
+          type: newType
+        },
+            
+            { where: { id } }
+        );
+    }
     
 
   } catch (error) {
