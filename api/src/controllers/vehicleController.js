@@ -24,13 +24,26 @@ const getVehicleByName = async (name) => {
   }
 };
 
+const getVehicleByType = async (type) => {
+  try {
+    let vehicleByType = await Vehicle.findAll({
+      where: {
+        type: type,
+      },
+    });
+    return vehicleByType;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
 
 const createVehicleDB = async (
-  name, totalKm, oilKm, serviceKm
+  name, type, totalKm, oilKm, serviceKm
 ) => {
   try {
     let newVehicle = Vehicle.create({
-      name, totalKm, oilKm, serviceKm
+      name, type, totalKm, oilKm, serviceKm
     });
     return newVehicle;
   } catch (error) {
