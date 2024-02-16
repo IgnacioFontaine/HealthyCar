@@ -51,6 +51,16 @@ const createVehicleDB = async (
   }
 };
 
+const updateVehicle = async () => {
+  try {
+
+    
+
+  } catch (error) {
+    throw new Error(error);
+  }
+}
+
 
 const deleteVehicle = async (id) => {
 
@@ -68,5 +78,6 @@ module.exports = {
   getVehicleByName,
   getVehicleByType,
   createVehicleDB,
+  updateVehicle,
   deleteVehicle
 };
