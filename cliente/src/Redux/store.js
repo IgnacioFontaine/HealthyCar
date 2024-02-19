@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import todosReducer from './slice';
+import reducer from './reducer';
 
 const store = configureStore({
   reducer: {
-    todos: todosReducer, // Agrega tu reductor aquí
+    todos: todosReducer, reducer // Agrega tu reductor aquí
   },
 });
 
