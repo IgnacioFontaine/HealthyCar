@@ -9,3 +9,8 @@ export const getAllVehicules = () => async (dispatch) => {
     return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
   }
 };
+
+export const createVehicule = (vehicule) => async (dispatch) => {
+  const newVehicule = await axios.post("http://localhost:3001/vehicule", vehicule);
+  return dispatch({ type: ACTION_TYPES.CREATE_VEHICULE, payload: newVehicule.data });
+};
