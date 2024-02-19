@@ -1,6 +1,7 @@
 import axios from "axios";
 import ACTION_TYPES from './actionTypes'
 
+//User actions
 export const getAllUsers = () => async (dispatch) => {
   try {
     let result = await axios.get("http://localhost:3001/user");
@@ -38,12 +39,34 @@ export const modifyUser = (id, updatedFields) => {
   };
 };
 
+export const deleteUser = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`http://localhost:3001/user/delete/${id}`);
+      
+      dispatch({
+        type: ACTION_TYPES.DELETE_USER_SUCCESS,
+        payload: id
+      });
+    } catch (error) {
+      dispatch({
+        type: ACTION_TYPES.DELETE_USER_FAILURE,
+        payload: error.message
+      });
+    }
+  };
+};
+
+
+
 export const createUser = (user) => async (dispatch) => {
   const newUser = await axios.post("http://localhost:3001/user/create", user);
   return dispatch({ type: ACTION_TYPES.CREATE_USER, payload: newUser.data });
 };
 
 
+
+//Vehicules actions
 export const getAllVehicules = () => async (dispatch) => {
   try {
     let result = await axios.get("http://localhost:3001/vehicules");
