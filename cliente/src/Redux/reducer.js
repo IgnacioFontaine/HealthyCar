@@ -2,7 +2,8 @@ import ACTION_TYPES from './actionTypes'
 
 //Config initialState
 const initialState = {
-  
+  sesion_user: [],
+  vehicules_user:[],
 };
 
 //Config reducer
