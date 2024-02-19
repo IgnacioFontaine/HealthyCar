@@ -97,6 +97,25 @@ export const getNameVehicules = (name) => async (dispatch) => {
   }
 };
 
+export const modifyVehicule = (id, updatedFields) => {
+  return async (dispatch) => {
+    try {
+
+      await axios.put(`http://localhost:3001/vehicule/modify`, id, updatedFields);
+
+      dispatch({
+        type: ACTION_TYPES.MODIFY_VEHICULE_SUCCESS,
+        payload: updatedFields
+      });
+    } catch (error) {
+      dispatch({
+        type: ACTION_TYPES.MODIFY_VEHICULE_FAILURE,
+        payload: error.message
+      });
+    }
+  };
+};
+
 export const deleteVehicule = (id) => {
   return async (dispatch) => {
     try {
