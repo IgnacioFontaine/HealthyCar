@@ -19,6 +19,25 @@ export const getUserName = (name) => async (dispatch) => {
   }
 };
 
+export const modifyUser = (id, updatedFields) => {
+  return async (dispatch) => {
+    try {
+
+      await axios.put(`http://localhost:3001/user/modify`, id, updatedFields);
+
+      dispatch({
+        type: ACTION_TYPES.MODIFY_USER_SUCCESS,
+        payload: updatedFields
+      });
+    } catch (error) {
+      dispatch({
+        type: ACTION_TYPES.MODIFY_USER_FAILURE,
+        payload: error.message
+      });
+    }
+  };
+};
+
 export const createUser = (user) => async (dispatch) => {
   const newUser = await axios.post("http://localhost:3001/user/create", user);
   return dispatch({ type: ACTION_TYPES.CREATE_USER, payload: newUser.data });
