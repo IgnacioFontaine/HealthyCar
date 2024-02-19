@@ -97,3 +97,20 @@ export const getNameVehicules = (name) => async (dispatch) => {
   }
 };
 
+export const deleteVehicule = (id) => {
+  return async (dispatch) => {
+    try {
+      await axios.delete(`http://localhost:3001/vehicule/delete/${id}`);
+      
+      dispatch({
+        type: ACTION_TYPES.DELETE_VEHICULE_SUCCESS,
+        payload: id
+      });
+    } catch (error) {
+      dispatch({
+        type: ACTION_TYPES.DELETE_VEHICULE_FAILURE,
+        payload: error.message
+      });
+    }
+  };
+};
