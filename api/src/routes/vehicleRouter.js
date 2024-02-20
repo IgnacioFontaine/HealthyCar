@@ -38,6 +38,19 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/user", async (req, res) => {
+  try {
+    const { userName } = req.body;
+
+    const vehicles = await getUserVehicles(userName)
+      
+    return res.status(200).json(vehicles);
+
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+});
+
 router.post("/create", async (req, res) => {
   try {
     const { name, type,  totalKm, oilKm, serviceKm, userName } = req.body;
