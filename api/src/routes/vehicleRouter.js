@@ -40,7 +40,7 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
   try {
-    const { name, type,  totalKm, oilKm, serviceKm } = req.body;
+    const { name, type,  totalKm, oilKm, serviceKm, userName } = req.body;
 
     //Create
     const newVehicle= await createVehicleDB(
@@ -51,13 +51,13 @@ router.post("/create", async (req, res) => {
       serviceKm
     );
 
-    // let UserDB = await User.findOne({
-    //   where: {
-    //     name: authorName,
-    //   },
-    // });
+    let userDB = await User.findOne({
+      where: {
+        name: userName,
+      },
+    });
 
-    // newVehicle.setUser(userDB);
+    newVehicle.setUser(userDB);
 
     return res.status(200).json(newVehicle);
   } catch (error) {
