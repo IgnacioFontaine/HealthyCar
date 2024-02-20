@@ -35,6 +35,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         type_vehicules: action.payload,
       }
+    
+    case ACTION_TYPES.CREATE_USER:
+      if (action.payload.status === 200) {
+        return {
+          ...state,
+          errormsg: {},
+        };
+      } else {
+        return {
+          ...state,
+          errormsg: action.payload,
+        };
+      }
 
     default:
       return {
