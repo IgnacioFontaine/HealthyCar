@@ -97,6 +97,15 @@ export const getNameVehicules = (name) => async (dispatch) => {
   }
 };
 
+export const getUserVehicules = (user) => async (dispatch) => {
+  try {
+    let result = await axios.get("http://localhost:3001/vehicules", user);
+    return dispatch({ type: ACTION_TYPES.GET_USER_VEHICULES, payload: result.data });
+  } catch (error) {
+    return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
+  }
+};
+
 export const modifyVehicule = (id, updatedFields) => {
   return async (dispatch) => {
     try {
