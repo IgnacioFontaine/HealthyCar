@@ -60,6 +60,9 @@ const reducer = (state = initialState, action) => {
             ...state,
             sesion_user: [...state.sesion_user]
       };
+    
+    case ACTION_TYPES.MODIFY_USER_FAILURE:
+      return state;
 
     case ACTION_TYPES.DELETE_USER_SUCCESS:
       return {
@@ -81,6 +84,21 @@ const reducer = (state = initialState, action) => {
           errormsg: action.payload,
         };
       }
+
+    case ACTION_TYPES.MODIFY_VEHICULE_SUCCESS:
+      state.vehicules_user.forEach((vehicle)=>{
+                if(vehicle.id === action.payload.id){
+                  vehicle.name = action.payload.name,
+                  vehicle.type = action.payload.type,
+                  vehicle.totalKm = action.payload.totalKm,
+                  vehicle.oilKm = action.payload.oilKm,
+                  vehicle.serviceKm = action.payload.serviceKm
+                }
+            })
+        return {
+            ...state,
+            vehicules_user: [...state.vehicules_user]
+      };
 
     case ACTION_TYPES.DELETE_VEHICULE_SUCCESS:
       return {
