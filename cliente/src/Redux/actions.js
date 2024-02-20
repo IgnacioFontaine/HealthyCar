@@ -99,7 +99,7 @@ export const getNameVehicules = (name) => async (dispatch) => {
 
 export const getUserVehicules = (user) => async (dispatch) => {
   try {
-    let result = await axios.get("http://localhost:3001/vehicules", user);
+    let result = await axios.get("http://localhost:3001/vehicules/user", user.name);
     return dispatch({ type: ACTION_TYPES.GET_USER_VEHICULES, payload: result.data });
   } catch (error) {
     return dispatch({ type: ACTION_TYPES.ERROR, payload: error });
