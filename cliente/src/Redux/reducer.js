@@ -49,6 +49,19 @@ const reducer = (state = initialState, action) => {
         };
       }
 
+    case ACTION_TYPES.CREATE_VEHICULE:
+      if (action.payload.status === 200) {
+        return {
+          ...state,
+          errormsg: {},
+        };
+      } else {
+        return {
+          ...state,
+          errormsg: action.payload,
+        };
+      }
+
     default:
       return {
         ...state,
