@@ -70,6 +70,14 @@ const reducer = (state = initialState, action) => {
         };
       }
 
+    case ACTION_TYPES.DELETE_VEHICULE_SUCCESS:
+      return {
+        ...state, all_companies: state.all_companies.filter(all_companies => all_companies.id !== action.payload)
+      };
+    
+    case ACTION_TYPES.DELETE_VEHICULE_FAILURE:
+      return state;
+
     default:
       return {
         ...state,
