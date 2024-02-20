@@ -29,6 +29,12 @@ const reducer = (state = initialState, action) => {
         ...state,
         name_vehicules: action.payload,
       }
+    
+    case ACTION_TYPES.GET_TYPE_VEHICULES:
+      return {
+        ...state,
+        type_vehicules: action.payload,
+      }
 
     default:
       return {
