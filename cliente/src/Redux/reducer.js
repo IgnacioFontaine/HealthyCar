@@ -99,6 +99,9 @@ const reducer = (state = initialState, action) => {
             ...state,
             vehicules_user: [...state.vehicules_user]
       };
+    
+    case ACTION_TYPES.MODIFY_VEHICULE_FAILURE:
+      return state;
 
     case ACTION_TYPES.DELETE_VEHICULE_SUCCESS:
       return {
