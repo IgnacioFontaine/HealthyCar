@@ -49,6 +49,18 @@ const reducer = (state = initialState, action) => {
         };
       }
 
+    case ACTION_TYPES.MODIFY_USER_SUCCESS:
+      state.sesion_user.forEach((user)=>{
+                if(user.id === action.payload.id){
+                  user.name = action.payload.name,
+                  user.password = action.payload.password
+                }
+            })
+        return {
+            ...state,
+            sesion_user: [...state.sesion_user]
+      };
+
     case ACTION_TYPES.DELETE_USER_SUCCESS:
       return {
         ...state, all_companies: state.all_companies.filter(all_companies => all_companies.id !== action.payload)
