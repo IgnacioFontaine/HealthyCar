@@ -1,4 +1,5 @@
 const { Vehicle } = require("../db");
+const { User } = require("../db");
 
 
 const getAllVehicles = async () => {
@@ -32,6 +33,21 @@ const getVehicleByType = async (type) => {
       },
     });
     return vehicleByType;
+  } catch (error) {
+    throw new Error(error);
+  }
+};
+
+const getUserVehicles = async (userName) => {
+  try {
+    let vehiclesUser = await Vehicle.findAll({
+      where: {
+        User: {
+          name: userName
+        },
+      },
+    });
+    return vehiclesUser;
   } catch (error) {
     throw new Error(error);
   }
@@ -127,6 +143,7 @@ module.exports = {
   getAllVehicles,
   getVehicleByName,
   getVehicleByType,
+  getUserVehicles,
   createVehicleDB,
   updateVehicle,
   deleteVehicle
