@@ -11,10 +11,17 @@ const initialState = {
 //Config reducer
 const reducer = (state = initialState, action) => {
   switch (action.type) {
+    
     case ACTION_TYPES.GET_USER_NAME:
       return {
         ...state,
         sesion_user: action.payload,
+      }
+    
+    case ACTION_TYPES.GET_USER_VEHICULES:
+      return {
+        ...state,
+        vehicules_user: action.payload,
       }
 
     default:
