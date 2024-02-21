@@ -11,7 +11,7 @@ const Error = () => {
         </div>
         <div >
             <h3  color={"black"}>Return to Home</h3>
-            <button onClick={()=>navigate("/")} > </button>
+            <button onClick={()=>navigate("/")} >Home</button>
         </div>
       </div>
     </div>
