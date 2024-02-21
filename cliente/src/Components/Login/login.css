@@ -1,0 +1,14 @@
+h1 {
+  font-size: 3rem;
+  font-family: 'Libre Baskerville', serif;
+}
+
+.seccion-clara{
+  color: black;
+  background-color: white;
+}
+
+.seccion-oscrura{
+  color: white;
+  background-color: #830000;
+}
