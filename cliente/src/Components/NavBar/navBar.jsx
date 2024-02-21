@@ -1,5 +1,7 @@
 import "./navBar.css"
+import { useNavigate } from 'react-router-dom';
 const NavBar = () => {
+  const navigate = useNavigate()
   return (
     < div>
         <nav  className='navbar navbar-expand-lg bg-body-tertiary' >
@@ -20,7 +22,7 @@ const NavBar = () => {
                 <a className="nav-link" href="#">Settings</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Logout</a>
+                <a className="nav-link" href="#" onClick={navigate("/login")}>Logout</a>
               </li>
       </ul>
     </div>
