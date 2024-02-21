@@ -22,7 +22,7 @@ const NavBar = () => {
                 <a className="nav-link" href="#">Settings</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={navigate("/login")}>Logout</a>
+                <a className="nav-link" href="#" onClick={()=>navigate("/login")}>Logout</a>
               </li>
       </ul>
     </div>

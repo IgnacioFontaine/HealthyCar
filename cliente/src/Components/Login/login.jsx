@@ -1,6 +1,8 @@
 import './login.css'
-const Login = () => {
+import { useNavigate } from 'react-router-dom';
 
+const Login = () => {
+  const navigate = useNavigate();
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
@@ -16,7 +18,7 @@ const Login = () => {
           <input type="password" aria-label=" You Password..."></input>
         </div>
         <div className="container">
-          <button>Login</button>
+          <button onClick={() => navigate("/")}>Login</button>
           <button>Recover password</button>
         </div>
       </div>
