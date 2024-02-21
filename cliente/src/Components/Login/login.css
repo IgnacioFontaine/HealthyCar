@@ -1,5 +1,5 @@
 h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: 'Libre Baskerville', serif;
 }
 
@@ -11,4 +11,13 @@ h1 {
 .seccion-oscrura{
   color: white;
   background-color: #830000;
+}
+
+.seccion_form {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  gap: 20px;
 }
