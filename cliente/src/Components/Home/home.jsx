@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import NavBar from '../NavBar/navBar';
+import MyVehicules from '../MyVehicules/myVehicules';
+import NewVehicules from '../NewVehicule/newVehicule';
 
 const Home = () => {
   const navigate = useNavigate()
@@ -16,8 +18,7 @@ const Home = () => {
         </h3>
       </div>
       <div >
-        <button onClick={() => navigate("/login")} >Login</button>
-        <button onClick={() => navigate("/lasd")} >Error</button>
+        <NewVehicules></NewVehicules>
       </div>
     </div>
   );

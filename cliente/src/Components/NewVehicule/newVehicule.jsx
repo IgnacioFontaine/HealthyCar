@@ -8,11 +8,8 @@ const NewVehicules = () => {
         </div>
         <div>
           <input placeholder="Name..."></input>
-          <select placeholder="Type...">
-            <menuitem>Car</menuitem>
-            <menuitem>Van</menuitem>
-            <menuitem>Motorcycle</menuitem>
-            <menuitem>Another</menuitem>
+          <select placeholder="Type...">auto, van, etc
+            
           </select>
         </div>
       </div>
