@@ -18,7 +18,7 @@ const Login = () => {
           <input type="password" aria-label=" You Password..."></input>
         </div>
         <div className="container">
-          <button onClick={() => navigate("/")}>Login</button>
+          <button onClick={() => navigate("/home")}>Login</button>
           <button>Recover password</button>
         </div>
       </div>
