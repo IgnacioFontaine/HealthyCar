@@ -1,3 +1,4 @@
+import "./settings.css";
 
 const Settings = () => {
 
@@ -5,7 +6,7 @@ const Settings = () => {
     < div>
         <div >
         <div>
-          <h1 >Error 404</h1>
+          <h1 >Settings</h1>
         </div>
       </div>
     </div>
