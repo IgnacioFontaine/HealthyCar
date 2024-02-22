@@ -16,7 +16,7 @@ const NavBar = () => {
                 <a className="nav-link active" aria-current="page" href="#">My Vehicules</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#" onClick={()=>navigate("/settings")}>New Vehicule</a>
+                <a className="nav-link active" aria-current="page" href="#" onClick={()=>navigate("/create")}>New Vehicule</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={()=>navigate("/settings")}>Settings</a>
