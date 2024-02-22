@@ -5,7 +5,7 @@ import Login from "./Components/Login/login"
 import Home from "./Components/Home/home"
 import Error from "./Components/Error/error"
 import Settings from './Components/Settings/settings';
-
+import NewVehicule from './Components/NewVehicule/newVehicule'
 
 function App() {
   const location = useLocation()
@@ -18,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/create" element={<NewVehicule />} />
         <Route path="/settings" element={<Settings />}  />
         <Route path="*" element={<Error />}  />
       </Routes>

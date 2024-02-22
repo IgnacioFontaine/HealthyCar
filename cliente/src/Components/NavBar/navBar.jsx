@@ -16,13 +16,13 @@ const NavBar = () => {
                 <a className="nav-link active" aria-current="page" href="#">My Vehicules</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">New Vehicule</a>
+                <a className="nav-link active" aria-current="page" href="#" onClick={()=>navigate("/settings")}>New Vehicule</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={()=>navigate("/settings")}>Settings</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#" onClick={()=>navigate("/login")}>Logout</a>
+                <a className="nav-link" href="#" onClick={()=>navigate("/")}>Logout</a>
               </li>
       </ul>
     </div>
