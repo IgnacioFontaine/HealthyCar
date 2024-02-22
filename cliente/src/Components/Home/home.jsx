@@ -1,5 +1,3 @@
-// import MyVehicules from '../MyVehicules/myVehicules';
-// import NewVehicules from '../NewVehicule/newVehicule';
 
 const Home = () => {
 
@@ -13,8 +11,8 @@ const Home = () => {
           Aplicación creada para un mantenimiento eficiente de tu vehículo, al realizar en tiempo y forma el mismo logramos ser eficientes
         </h3>
       </div>
-      <div >
-        {/* <NewVehicules></NewVehicules> */}
+      <div>
+        <h5>Logo Empresa o colocar acá diréctamente los vehículos</h5>
       </div>
     </div>
   );
