@@ -16,8 +16,8 @@ function App() {
     <div className="App">
       {showNavBar && <NavBar />}
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/settings" element={<Settings />}  />
         <Route path="*" element={<Error />}  />
       </Routes>
