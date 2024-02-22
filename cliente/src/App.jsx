@@ -1,11 +1,12 @@
 import './App.css'
 import { Route, Routes, useLocation } from "react-router-dom";
-import NavBar from "./Components/NavBar/navBar"
-import Login from "./Components/Login/login"
-import Home from "./Components/Home/home"
-import Error from "./Components/Error/error"
+import NavBar from "./Components/NavBar/navBar";
+import Login from "./Components/Login/login";
+import Home from "./Components/Home/home";
+import Error from "./Components/Error/error";
 import Settings from './Components/Settings/settings';
-import NewVehicule from './Components/NewVehicule/newVehicule'
+import NewVehicule from './Components/NewVehicule/newVehicule';
+import MyVehicule from "./Components/MyVehicules/myVehicules"
 
 function App() {
   const location = useLocation()
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
         <Route path="/create" element={<NewVehicule />} />
+        <Route path="/myVehicules" element={<MyVehicule />} />
         <Route path="/settings" element={<Settings />}  />
         <Route path="*" element={<Error />}  />
       </Routes>
