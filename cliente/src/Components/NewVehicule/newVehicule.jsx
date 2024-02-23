@@ -11,7 +11,7 @@ const NewVehicules = () => {
         <div className="container form-create">
           <div className="flex input-vehicule">
             <label htmlFor="vehiculeName" className="input-label">Name:</label>
-            <input  id="vehiculeName" placeholder="Type name..."></input>
+            <input  id="vehiculeName" autoComplete='none' placeholder="Type name..."></input>
           </div>
           <div>
             <label htmlFor="exampleDataList" className="form-label">Select</label>
@@ -34,6 +34,9 @@ const NewVehicules = () => {
           <div className="flex input-vehicule">
             <label htmlFor="vehiculeServiceKm" className="input-label">Service Km:</label>
             <input  id="vehiculeServiceKm" placeholder=""></input>
+          </div>
+          <div className="flex justify-content-center">
+            <button type='submit' >Create</button>
           </div>
         </div>
       </div>
