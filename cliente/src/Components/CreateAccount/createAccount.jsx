@@ -1,7 +1,7 @@
-import './login.css'
+import './createAccount.css'
 import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const CreateAccount= () => {
   const navigate = useNavigate();
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
@@ -27,4 +27,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default CreateAccount;
