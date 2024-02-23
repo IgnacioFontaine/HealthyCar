@@ -1,6 +1,8 @@
 import './createAccount.css'
+import { useNavigate } from 'react-router-dom';
 
-const CreateAccount= () => {
+const CreateAccount = () => {
+  const navigate = useNavigate();
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
@@ -17,7 +19,7 @@ const CreateAccount= () => {
             <input type="password" className="form-control" id="inputPassword2" placeholder="Password"></input>
           </div>
           <div className="col-auto">
-            <button type="submit" className="btn btn-primary mb-3">Create account</button>
+            <button type="submit" className="btn btn-primary mb-3" onClick={() => navigate("/home")}>Create account</button>
           </div>
         </form>
       </div>

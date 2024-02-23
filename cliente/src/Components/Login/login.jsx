@@ -19,7 +19,7 @@ const Login = () => {
         </div>
         <div className="container">
           <button onClick={() => navigate("/home")}>Login</button>
-          <button>Create account</button>
+          <button onClick={() => navigate("/newAccount")}>Create account</button>
           <button>Recover password</button>
         </div>
       </div>
