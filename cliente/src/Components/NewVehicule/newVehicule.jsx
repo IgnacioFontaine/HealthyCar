@@ -1,12 +1,12 @@
 const NewVehicules = () => {
 
   return (
-    < div>
+    < div className=" d-flex flex-column justify-content-center align-items-center">
         <div >
         <div>
           <h1 >Create your vehicule</h1>
         </div>
-        <div>
+        <div className="container">
           <div>
             <label htmlFor="vehiculeName" className="input-label">Name:</label>
             <input  id="vehiculeName" placeholder="Type name..."></input>
@@ -22,8 +22,16 @@ const NewVehicules = () => {
             </datalist>
           </div>
           <div>
-            <label htmlFor="vehiculeName" className="input-label">Name:</label>
-            <input  id="vehiculeName" placeholder="Type name..."></input>
+            <label htmlFor="vehiculeTotalKm" className="input-label">Total Km:</label>
+            <input  id="vehiculeTotalKm" placeholder=""></input>
+          </div>
+          <div>
+            <label htmlFor="vehiculeOilKm" className="input-label">Oil Km:</label>
+            <input  id="vehiculeOilKm" placeholder=""></input>
+          </div>
+          <div>
+            <label htmlFor="vehiculeServiceKm" className="input-label">Service Km:</label>
+            <input  id="vehiculeServiceKm" placeholder=""></input>
           </div>
         </div>
       </div>
