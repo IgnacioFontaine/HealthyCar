@@ -18,7 +18,7 @@ const NewVehicules = () => {
               <option name="Car" value="Car"></option>
               <option name="Motorcycle" value="Motorcycle"></option>
               <option name="Van" value="Van"></option>
-              <option name="Another" value="Another"></option>
+              <option name="Other" value="Other"></option>
             </datalist>
           </div>
           <div>
