@@ -17,7 +17,7 @@ const CreateAccount= () => {
             <input type="password" className="form-control" id="inputPassword2" placeholder="Password"></input>
           </div>
           <div className="col-auto">
-            <button type="submit" className="btn btn-primary mb-3">Confirm identity</button>
+            <button type="submit" className="btn btn-primary mb-3">Create account</button>
           </div>
         </form>
       </div>
