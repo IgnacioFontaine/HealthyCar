@@ -4,13 +4,18 @@ const NewVehicules = () => {
     < div>
         <div >
         <div>
-          <h1 >Form creación de vehículo</h1>
+          <h1 >Create your vehicule</h1>
         </div>
         <div>
-          <input placeholder="Name..."></input>
-          <select placeholder="Type...">auto, van, etc
-            
-          </select>
+          <label htmlFor="exampleDataList" className="form-label">Datalist example</label>
+          <input className="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search..."></input>
+          <datalist id="datalistOptions">
+            <option value="San Francisco"></option>
+            <option value="New York"></option>
+            <option value="Seattle"></option>
+            <option value="Los Angeles"></option>
+            <option value="Chicago"></option>
+          </datalist>
         </div>
       </div>
     </div>
