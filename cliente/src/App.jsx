@@ -7,6 +7,7 @@ import Error from "./Components/Error/error";
 import Settings from './Components/Settings/settings';
 import NewVehicule from './Components/NewVehicule/newVehicule';
 import MyVehicule from "./Components/MyVehicules/myVehicules"
+import CreateAccount from './Components/CreateAccount/createAccount';
 
 function App() {
   const location = useLocation()
@@ -18,6 +19,7 @@ function App() {
       {showNavBar && <NavBar />}
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/newAccount" element={<CreateAccount />} />
         <Route path="/home" element={<Home />} />
         <Route path="/create" element={<NewVehicule />} />
         <Route path="/myVehicules" element={<MyVehicule />} />
