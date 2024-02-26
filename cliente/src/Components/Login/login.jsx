@@ -15,9 +15,9 @@ const Login = () => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Usuario creado:",formData);
+    console.log("Login:",formData);
     setFormData({
-          name: "",
+          email: "",
           password: ""
     })
   };
@@ -25,7 +25,7 @@ const Login = () => {
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
-        <h1 >HealthyCar</h1>
+        <h1 className='title'>Login</h1>
       </div>
       <div className="container align-content-center ">
         <form className="row g-3 form_create" onSubmit={handleSubmit} >
@@ -61,7 +61,6 @@ const Login = () => {
           </div>
         </form>
         <div className="container">
-          <button onClick={() => navigate("/home")}>Login</button>
           <button onClick={() => navigate("/newAccount")}>Create account</button>
           <button>Recover password</button>
         </div>
