@@ -7,7 +7,7 @@ const CreateAccount = () => {
 
   const [formData, setFormData] = useState({
     email: "",
-    passwrd: ""
+    password: ""
   });
 
   const handleChange = (event) =>
@@ -34,7 +34,15 @@ const CreateAccount = () => {
           </div>
           <div className="col-auto">
             <label htmlFor="inputPassword2" className="visually-hidden">Password</label>
-            <input type="password" className="form-control" id="inputPassword2" placeholder="Password"></input>
+            <input
+              type="password"
+              name='password'
+              className="form-control"
+              id="inputPassword2"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+            ></input>
           </div>
           <div className="col-auto">
             <button type="submit" className="btn btn-primary mb-3" onClick={() => navigate("/home")}>Create account</button>
