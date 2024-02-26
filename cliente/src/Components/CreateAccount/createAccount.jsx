@@ -1,9 +1,7 @@
-import './createAccount.css'
-import { useNavigate } from 'react-router-dom';
+import './createAccount.css';
 import { useState } from 'react';
 
 const CreateAccount = () => {
-  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     email: "",
@@ -28,14 +26,13 @@ const CreateAccount = () => {
         <h1 >HealthyCar</h1>
       </div>
       <div className="container align-content-center ">
-        <form className="row g-3" onSubmit={handleSubmit}>
-          <div className="col-auto">
+        <form className="row g-3 form_create" onSubmit={handleSubmit} >
+          <div className="col-auto d-flex flex-direction-colum">
             <label
               htmlFor="staticEmail2" className="visually-hidden">Email</label>
             <input
               type="text"
               name='email'
-              readOnly
               className="form-control-plaintext"
               id="staticEmail2"
               value={formData.email}
@@ -56,7 +53,9 @@ const CreateAccount = () => {
             ></input>
           </div>
           <div className="col-auto">
-            <button type="submit" className="btn btn-primary mb-3">Create account</button>
+            <button type="submit"
+              className="btn btn-primary mb-3"
+            >Create account</button>
           </div>
         </form>
       </div>
