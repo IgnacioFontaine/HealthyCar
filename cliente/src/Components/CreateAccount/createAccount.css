@@ -1,3 +1,9 @@
+.title{
+  font-size: 2rem;
+  padding: 15px 0;
+  font-family: 'Libre Baskerville', serif;
+}
+
 .form_create{
   align-items: center;
   text-align: center;

@@ -23,7 +23,7 @@ const CreateAccount = () => {
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
-        <h1 >HealthyCar</h1>
+        <h1 className='title' >Create Account</h1>
       </div>
       <div className="container align-content-center ">
         <form className="row g-3 form_create" onSubmit={handleSubmit} >
