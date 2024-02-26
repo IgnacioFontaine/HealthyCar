@@ -36,7 +36,7 @@ const NewVehicules = () => {
             <input  id="vehiculeServiceKm" placeholder=""></input>
           </div>
           <div className="flex justify-content-center">
-            <button type='submit' >Create</button>
+            <button type='submit' onClick={()=>{alert("Vehiculo creado")}}>Create</button>
           </div>
         </div>
       </div>

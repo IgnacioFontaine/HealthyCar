@@ -1,8 +1,15 @@
 import './createAccount.css'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const CreateAccount = () => {
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    passwrd: ""
+  });
+
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
