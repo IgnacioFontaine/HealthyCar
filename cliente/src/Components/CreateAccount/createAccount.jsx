@@ -54,8 +54,11 @@ const CreateAccount = () => {
           </div>
           <div className="col-auto">
             <button type="submit"
-              className="btn btn-primary mb-3"
+              className="btn btn-primary m-1"
             >Create account</button>
+            <button 
+              className="btn btn-primary m-1"
+            >Return Home</button>
           </div>
         </form>
       </div>
