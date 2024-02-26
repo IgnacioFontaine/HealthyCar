@@ -54,16 +54,14 @@ const Login = () => {
               onChange={handleChange}
             ></input>
           </div>
-          <div className="col-auto">
+          <div className="col-auto buttons">
             <button type="submit"
-              className="btn btn-primary mb-3"
+              className="btn btn-primary m-1"
             >Login</button>
+            <button className="btn btn-primary m-1" onClick={() => navigate("/newAccount")}>Create account</button>
+          <button className="btn btn-primary m-1 ">Recover password</button>
           </div>
         </form>
-        <div className="container">
-          <button onClick={() => navigate("/newAccount")}>Create account</button>
-          <button>Recover password</button>
-        </div>
       </div>
     </div>
   );
