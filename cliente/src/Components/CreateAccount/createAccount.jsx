@@ -12,6 +12,15 @@ const CreateAccount = () => {
 
   const handleChange = (event) =>
     setFormData({ ...formData, [event.target.name]: event.target.value });
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    AlertProduct(formData);
+    setFormData({
+          name: "",
+          amount: ""
+    })
+  };
 
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
@@ -23,7 +32,9 @@ const CreateAccount = () => {
           <div className="col-auto">
             <label
               htmlFor="staticEmail2" className="visually-hidden">Email</label>
-            <input type="text"
+            <input
+              type="text"
+              name='email'
               readOnly
               className="form-control-plaintext"
               id="staticEmail2"
