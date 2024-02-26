@@ -1,7 +1,10 @@
 .title{
   font-size: 2rem;
   padding: 15px 0;
+  margin: 20px;
   font-family: 'Libre Baskerville', serif;
+  background-color: chocolate;
+  border-radius: 10px;
 }
 
 .form_create{
@@ -11,5 +14,10 @@
   flex-direction: column;
   padding-top: 20px;
   height: 500px;
-  width: 250px;
+  width: 500px;
+  padding-top: 65px;
+  gap: 70px;
+  background-color:rgba(0, 0, 0, 0.829);
+  border-radius: 10px;
+  color: white;
 }

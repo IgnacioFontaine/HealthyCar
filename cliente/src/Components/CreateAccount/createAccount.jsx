@@ -21,11 +21,11 @@ const CreateAccount = () => {
   };
 
   return (
-    <div className='container text-center rectangulo d-flex align-items-center'>
+    <div className='container text-center rectangulo  align-items-center flex flex-direction-colum'>
       <div>
         <h1 className='title' >Create Account</h1>
       </div>
-      <div className="container align-content-center ">
+      <div className="container align-items-center justify-content-center">
         <form className="row g-3 form_create" onSubmit={handleSubmit} >
           <div className="col-auto d-flex flex-direction-colum">
             <label
