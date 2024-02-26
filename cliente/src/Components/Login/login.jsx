@@ -3,6 +3,24 @@ import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
+
+  const handleChange = (event) =>
+    setFormData({ ...formData, [event.target.name]: event.target.value });
+  
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("Usuario creado:",formData);
+    setFormData({
+          name: "",
+          password: ""
+    })
+  };
+
   return (
     <div className='container text-center rectangulo d-flex align-items-center'>
       <div>
