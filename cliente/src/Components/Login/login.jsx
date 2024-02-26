@@ -1,5 +1,6 @@
 import './login.css'
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,14 +28,38 @@ const Login = () => {
         <h1 >HealthyCar</h1>
       </div>
       <div className="container align-content-center ">
-        <div className='seccion_form'>
-          <h2>User: </h2>
-          <input aria-label=" You User..."></input>
-        </div>
-        <div className='seccion_form'>
-          <h2>Password:</h2>
-          <input type="password" aria-label=" You Password..."></input>
-        </div>
+        <form className="row g-3 form_create" onSubmit={handleSubmit} >
+          <div className="col-auto d-flex flex-direction-colum">
+            <label
+              htmlFor="staticEmail2" className="visually-hidden">Email</label>
+            <input
+              type="text"
+              name='email'
+              className="form-control-plaintext"
+              id="staticEmail2"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder='email@example.com'
+            ></input>
+          </div>
+          <div className="col-auto">
+            <label htmlFor="inputPassword2" className="visually-hidden">Password</label>
+            <input
+              type="password"
+              name='password'
+              className="form-control"
+              id="inputPassword2"
+              placeholder="Password"
+              value={formData.password}
+              onChange={handleChange}
+            ></input>
+          </div>
+          <div className="col-auto">
+            <button type="submit"
+              className="btn btn-primary mb-3"
+            >Login</button>
+          </div>
+        </form>
         <div className="container">
           <button onClick={() => navigate("/home")}>Login</button>
           <button onClick={() => navigate("/newAccount")}>Create account</button>
