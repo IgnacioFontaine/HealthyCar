@@ -1,7 +1,9 @@
 import './createAccount.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const CreateAccount = () => {
+  const navigate = useNavigate()
 
   const [formData, setFormData] = useState({
     email: "",
@@ -58,7 +60,8 @@ const CreateAccount = () => {
             >Create account</button>
             <button 
               className="btn btn-primary m-1"
-            >Return Home</button>
+              onClick={()=>navigate("/login")}
+            >Return Login</button>
           </div>
         </form>
       </div>
