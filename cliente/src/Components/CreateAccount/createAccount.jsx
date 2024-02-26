@@ -15,10 +15,10 @@ const CreateAccount = () => {
   
   const handleSubmit = (event) => {
     event.preventDefault();
-    AlertProduct(formData);
+    console.log("Usuario creado:",formData);
     setFormData({
           name: "",
-          amount: ""
+          password: ""
     })
   };
 
@@ -28,7 +28,7 @@ const CreateAccount = () => {
         <h1 >HealthyCar</h1>
       </div>
       <div className="container align-content-center ">
-        <form className="row g-3">
+        <form className="row g-3" onSubmit={handleSubmit}>
           <div className="col-auto">
             <label
               htmlFor="staticEmail2" className="visually-hidden">Email</label>
@@ -56,7 +56,7 @@ const CreateAccount = () => {
             ></input>
           </div>
           <div className="col-auto">
-            <button type="submit" className="btn btn-primary mb-3" onClick={() => navigate("/home")}>Create account</button>
+            <button type="submit" className="btn btn-primary mb-3">Create account</button>
           </div>
         </form>
       </div>
